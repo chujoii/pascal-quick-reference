@@ -5,8 +5,12 @@ var
    s : string;
 begin
 
-   readln(s);
-   a:=5;
-   writeln(a, b, s);
+//   readln(s);
+//   a:=5;
+//  writeln(a, b, s);
+
+
+   readln(a);
+   writeln(a);
    
 end.
