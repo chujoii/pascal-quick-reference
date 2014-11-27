@@ -1,0 +1,46 @@
+/* Tango Desktop Project palette
+   Butter 	fce94f 	edd400 	c4a000
+   Orange 	fcaf3e 	f57900 	ce5c00
+   Chocolate 	e9b96e 	c17d11 	8f5902
+   Chameleon 	8ae234 	73d216 	4e9a06
+   Sky Blue 	729fcf 	3465a4 	204a87
+   Plum 	ad7fa8 	75507b 	5c3566
+   Scarlet Red 	ef2929 	cc0000 	a40000
+   Aluminium 	eeeeec 	d3d7cf 	babdb6
+   		888a85 	555753 	2e3436
+*/
+
+html {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+	color: #000000;
+	background-color: #eeeeec;
+	width: 66ex;
+	horizontal-align: middle;
+	vertical-align: middle;
+}
+
+
+pre {
+	background-color: #d3d7cf;
+	font-size : 1.3em;
+	padding: 1em;
+}
+
+.listing_pascal {
+        background-color: #d3d7cf;
+} 
+
+.listing_bash {
+        background-color: #2e3436;
+	color: #ffffff;
+} 
+
+

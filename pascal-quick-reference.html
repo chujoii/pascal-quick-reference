@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Краткое руководство по языку программирования Pascal</title>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <LINK rel="stylesheet" type="text/css" href="quick-reference.css">
+  </head>
+  <body>
+    
+    Краткое руководство по языку программирования Pascal
+
+
+    <p>
+      Совсем краткое изложение можно почитать
+      здесь: <a href="http://edunow.su/site/content/pascal/pascal_shpargalka">Шпаргалка
+	по языку Pascal</a>
+    </p>
+
+    
+    <h1>Паскаль</h1>
+    
+    примерный вид очень простой программы
+    
+    
+    <pre class="listing_pascal">program abc3; // название программы
+
+var               // описание переменных
+                  // переменная - по сути именованый ящичек
+   s : string;    // "s" будет хранить в себе строку символов
+   a : integer;   // "a" будет хранить в себе целое число
+
+begin             // начало программы
+                  // далее идёт "тело" программы
+   a := 5;        // присвоить переменной a значение 5
+   readln(s);     // запросить у пользователя несколько символов
+                  // и положить их в переменную s
+   writeln(s, a); // напечатать переменные s и a
+   
+end.              // конец программы - end с точкой</pre>
+
+
+    в некоторых случаях паскаль выглядит нелогично:<br>
+    readln(s);<br/>
+    вместо<br/>
+    s:=readln();<br/>
+    смиритесь
+    
+
+    
+    <h2>Ключевые слова</h2>
+    ключевые слова не допустимо использовать для названия переменных,
+    констант, процедур и функций.  список ключевых слов:
+    
+    <p>absolute, and, array, asm, begin, boolean, break, case, char, const,
+      continue, div, do, downto, else, end, for, function, goto, if,
+      implementation, in, interrupt, is, label, mod, not, or, org,
+      otherwise, print, procedure, program, read, real, record, repeat, shl,
+      shr, step, string, then, to, type, unit, until, uses, var, while,
+      with, xor
+    </p>
+    
+    <h2>Комментарии</h2>
+    Текст заключённый между фигурными скобками - комментарии к программе.
+    <p>
+    Пример:
+    <pre class="listing_pascal">{ Место для многострочного
+  комментария }</pre>
+
+    или так:
+    <pre class="listing_pascal">/*
+      Место для многострочного
+      комментария
+      */</pre>
+
+    текст после двух слэшей также является комментарием
+    <pre class="listing_pascal">// однострочный комментарий</pre>
+    </p>
+    
+    Хорошая программа 
+    
+    <h2>Типы данных</h2>
+    <ol>
+      <li> real числа с плавающей запятой 
+	
+	±1.17549435082 * 10^{-38} .. ±6.80564774407 * 10^{38}
+	
+      <li> integer целые -32768 .. 32767
+	
+      <li> char символьный
+      <li> boolean логический
+      <li> перечисления
+    </ol>
+    пример:
+    <pre class="listing_pascal">
+var           // объявления переменных
+  r: Real;    // переменная вещественного типа
+  i: Integer; // переменная целого типа
+  c: Char;    // переменная - символ
+  b: Boolean; // логическая переменная
+  s: String;  // переменная строки
+  t: Text;    // переменная для обьявления текстового файла
+
+  e: (apple, banana, orange, lemon); // перечисление
+  x: 1..10;    // переменная типа - перечисления
+  y: 'a'..'z'; // переменная типа - перечисления
+
+  set1: set of 1..10; // множество
+  set2: set of 'a'..'z'; // множество
+
+  r = record  // определение записи
+        x: integer;
+        y: char;
+  end;
+  f = Text;  // определение файла
+    </pre>
+    
+    
+    <h2>Блок (Составной оператор)</h2>
+
+    <p>Блок используется если можно использовать только один оператор,
+    а хочется несколько (как скобки (в математике)). Блок
+    ограничивается ключевыми словами begin и end.</p>
+
+    
+
+    
+    Например
+    <pre class="listing_pascal">
+if (a > b) then
+        оператор1;
+else
+        оператор2;
+    </pre>
+    
+    вместо оператор1 (или оператор2) может быть только один оператор но часто нужно
+    выполнить несколько.
+    
+    <pre class="listing_pascal">
+if (a > b) then begin
+        оператор3;
+        оператор4;
+        оператор5;
+end else
+        оператор2;
+    </pre>
+
+
+    причём крайне желательно даже одиночные операторы в командах if, while, for обрамлять блоком begin...end:
+    
+        <pre class="listing_pascal">
+if (a > b) then begin
+        оператор3;
+        оператор4;
+        оператор5;
+end else begin
+        оператор2;
+end;
+    </pre>
+
+    
+    
+    
+    <h2>Операторы управления выполнением программы</h2>
+    <pre class="listing_pascal">
+if a > b then  // условный оператор
+  writeln('Условие выполнилось')
+else           // иначе - секция может отсутствовать
+  writeln('Условие не выполнилось');
+
+case i of  // условный оператор множественного выбора
+  0: write('ноль');
+  1: write('один');
+  2: write('два')
+  else write('неизвестное число') // иначе - секция
+                              // может отсутствовать
+end;       // окончание case
+           // один из случаев когда нет begin но есть end
+    </pre>
+
+    Для множественных условий предпочтительно использовать оператор case
+    (потому что компилятор в большинстве случаев создаст более оптимальный
+    код).
+
+    операторы сравнивнения
+    <pre class="listing_pascal">
+<  меньше
+>  больше
+<= меньше или равно
+>= больше или равно
+=  равно
+<> неравно
+    </pre>
+
+    логические операторы
+    <pre class="listing_pascal">
+or  или
+and и
+not не
+    </pre>
+
+
+
+    Нежелательно делать так
+    <pre class="listing_pascal">
+   if (b=5) then ...
+    </pre>
+    лучше так (на 3 курсе вам скажут что паскаль
+    не нужен и обучат C, а привычки останутся)
+    <pre class="listing_pascal">
+   if (5=b) then ...
+    </pre>
+  
+    
+    Неправильно использовать знак равенства для сравнения чисел
+    с плавающей запятой
+    <pre class="listing_pascal">
+program abc5;
+var 
+   a,b : real;
+begin
+   a:=7.0;
+   b:=1.0-((1.0/3.0)*(a-1.0)/2.0); 
+   if (b=0.0) then
+      writeln('zero')
+   else
+      writeln ('no zero');
+   writeln(b);
+end.
+    </pre>
+    
+    более правильный вариант
+    <pre class="listing_pascal">
+program abc5;
+const epsilon : real = 1.0e-10;
+var 
+   a,b : real;
+begin
+   a:=7.0;
+   b:=1.0-((1.0/3.0)*(a-1.0)/2.0); 
+   if (b < epsilon) then
+      writeln('zero')
+   else
+      writeln ('no zero');
+   writeln(b);
+end.
+	   </pre>
+
+    в общем случае проверить равенство двух чисел (a,b) с плавающей
+    запятой можно так, причём epsilon нужно выбирать исходя из числа
+    разрядов, а также сложности и количества выполняемых действий.
+    
+    <p>
+      например: r1 имеет сопротивление 5±1Ω, r2 7±2Ω, посчитайте
+      погрешность сопротивления при соединении резисторов параллельно
+      по двум формулам r=1/((1/r1)+(1/r2)) и r=r1*r2/(r1+r2)
+    </p>
+
+
+    <pre class="listing_pascal">
+   \\ вместо неправильного
+   \\ if(a=b) ...
+   \\ используйте
+   if (abs(a-b) < epsilon) then ...
+   \\ или если хочется странного
+   if (abs(a-b) < epsilon * (abs(a)+abs(b))) then ...
+		  </pre>
+    
+    
+    <h2>Циклы</h2>
+    <pre class="listing_pascal">
+   n:=5;
+   
+   a:=1;
+   while (a < n+1) do begin // цикл с предусловием
+      writeln('a=', a);
+      a := a+1;
+   end;
+   
+   
+   
+   for b := 1 to 5 do begin // итерационный цикл
+      writeln('b=', b);
+      // внутри цикла for нельзя менять счётчик (b)
+   end;
+   // пользоваться счётчиком (b) после цикла некорректно
+   
+   
+   c:=1;
+   repeat // цикл с постусловием
+      writeln('c=', c);
+      c := c + 1;
+   until (c > 5);
+    </pre>
+
+    В результате работы на экран будут выведены числа 1,2,3,4,5 в столбик.
+
+    <h2>Процедуры и функции</h2>
+    Процедуры отличаются от функций тем, что функции возвращают какое-либо
+    значение, а процедуры — нет.
+
+    <pre class="listing_pascal">
+program abc5;
+
+var i : integer;
+
+function next(k: integer): integer;
+begin
+    next := k + 1
+end;
+ 
+begin
+  i := 1;
+  writeln(next(i));
+end.
+    </pre>
+
+    <h2>Множества</h2>
+    <pre class="listing_pascal">
+var { секция объявления переменных }
+   d : set of char;
+begin  { начало блока }
+   d:=['a','b']; 
+   i:=7;
+   if i in [5..10] then writeln('принадлежит множеству');
+    </pre>
+
+
+
+
+
+
+
+
+
+
+    <h2>Шаблон программы</h2>
+
+
+
+    
+    
+    <pre class="listing_pascal">
+/*
+    proj_3_abc.pas -- Одна строчка для названия программы и краткого описания того, что она делает.
+    Copyright (C) <год первого опубликования произведения> <имя автора>
+
+    License: <название лицензии или текст лицензии>
+*/
+
+program abc3;
+
+uses math;        // подключение модулей
+
+const             // список констант
+                  //MAX : integer = 100;  
+
+type              // описание типов
+                  //mass : array [1..MAX] of integer;
+
+
+var               // описание переменных
+
+begin             // начало программы
+
+end.              // конец программы</pre>
+
+    
+
+
+    <p>
+      для GNU GPL лицензии необходимо приложить полный текст лицензии
+      в виде отдельного файла
+      <a href="http://www.gnu.org/licenses/">COPYING</a>.
+      Рекомендуемый заголовок файла:
+      
+      <pre class="listing_pascal">
+/*	
+    proj_3_abc.pas -- Одна строчка для названия программы и краткого описания того, что она делает.
+    Copyright (C) <год первого опубликования произведения> <имя автора>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+    </pre>
+    </p>
+
+    <p>
+      для BSD лицензии:
+    <pre class="listing_pascal">
+/*
+    proj_3_abc.pas -- Одна строчка для названия программы и краткого описания того, что она делает.
+    Copyright (C) <год первого опубликования произведения> <имя автора>
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+    Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+    Neither the name of the <ORGANIZATION> nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+    CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
+    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+    ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+    TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+    THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+    SUCH DAMAGE.
+
+    — The BSD 3-Clause License
+*/
+    </pre>
+    </p>
+
+
+
+    
+
+    <h1>Список литературы</h1>
+    <ol>
+      <li>
+	Е.Р.Алексеев, О.В.Чеснокова, Т.В.Кучер 
+	<a href="http://www.altlinux.org/Books:FreePascal">
+	  Free Pascal и Lazarus: Учебник по программированию</a>
+	Библиотека ALT Linux
+      <li>
+	
+      </li>
+      <a href="http://www.elettroshop.com/files/prodotti/download/mikroelektronica/pascal_syntax.pdf">
+	Quick Reference Guide for Pascal language</a>
+      mikroElektronika SOFTWARE AND HARDWARE SOLUTIONS FOR THE EMBEDDED WORLD
+      </li>
+
+      <li>
+	<a href="http://ru.wikipedia.org/wiki/Pascal">
+	  Паскаль (язык программирования)</a>
+	Материал из Википедии — свободной энциклопедии 
+      </li>
+      
+      <li>
+	<a href="http://edunow.su/site/content/pascal/pascal_shpargalka">
+	  Шпаргалка по языку Pascal</a>
+      </li>
+      <ol>
+	
+	
+
+	  
+
+
+	
+	<br/><br/><br/><br/><br/><br/><br/>
+	<hr style="width: 70%"> 
+	
+	<p>
+	  Copyright (C) 2014 Roman V. Prikhodchenko
+	</p>
+	
+	
+	<p>Author: Roman V. Prikhodchenko <a href="chujoii@gmail.com">chujoii@gmail.com</a>
+	</p>
+	
+	
+	<h1>Лицензия</h1>
+	
+	<img src="CC_BY-SA_88x31.png" alt="cc_by-sa">
+	
+	<p>руководство распространяется в соответствии с условиями
+	  <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike</a>
+	  (Атрибуция — С сохранением условий) CC BY-SA.  Копирование и
+	  распространение приветствуется.
+	</p>
+	
+  </body>
+</html>
