@@ -17,7 +17,7 @@ Copyright (C) 2011 Roman V. Prikhodchenko
 
 
 Author: Roman V. Prikhodchenko <chujoii@gmail.com>
-
+Proof-reader: Ludmila N. Prikhodchenko <lunja>
 
 
   This file is part of pascal-quick-reference.
@@ -43,16 +43,18 @@ Author: Roman V. Prikhodchenko <chujoii@gmail.com>
 
 
 * Description:
-  
+
 
 * Usage:
-  use it
-
-
-
+  читайте:
+  
+  [[programming-quick-reference.org]]
+  
+  [[pascal-quick-reference.org]]
+  
 * History:
   Project created at 2011-04(Apr)-15
 
 
 * Dependences:
-  
+
