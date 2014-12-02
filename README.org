@@ -17,8 +17,11 @@ Copyright (C) 2011 Roman V. Prikhodchenko
 
 
 Author: Roman V. Prikhodchenko <chujoii@gmail.com>
+
 Proof-reader: Ludmila N. Prikhodchenko <lunja>
 
+
+* Лицензия на исходные тексты программ
 
   This file is part of pascal-quick-reference.
 
@@ -35,26 +38,45 @@ Proof-reader: Ludmila N. Prikhodchenko <lunja>
   You should have received a copy of the GNU General Public License
   along with pascal-quick-reference.  If not, see <http://www.gnu.org/licenses/>.
 
+* Лицензия на руководство
+
+[[CC_BY-SA_88x31.png]]
+
+Руководство распространяется в соответствии с условиями
+[[http://creativecommons.org/licenses/by-sa/3.0/][Attribution-ShareAlike]] (Атрибуция — С сохранением условий) CC BY-SA.
+Копирование и распространение приветствуется.
+
 
 
 * Keywords:
-  pascal quick reference
-
-
+pascal quick reference краткое руководство
 
 * Description:
+Рецепты по изготовлению программ из текстовых файлов.
 
+Критически относитесь к тексту: в нём гротеск искусно сочетается с
+непреднамеренными ошибками.
+#+BEGIN_COMMENT
+преувеличения с издёвкой
+#+END_COMMENT
+Автор не несёт никакой ответственности и ничего не гарантирует.
 
 * Usage:
-  читайте:
-  
-  [[programming-quick-reference.org]]
-  
-  [[pascal-quick-reference.org]]
+читайте:
+- [[programming-quick-reference.org][Краткое руководство по написанию программ]]
+- [[pascal-quick-reference.org][Краткое руководство по языку программирования Pascal]]
   
 * History:
-  Project created at 2011-04(Apr)-15
-
+Project created at 2011-04(Apr)-15
 
 * Dependences:
-
+- текстовый редактор
+- эмулятор терминала
+- компилятор
+- умение читать
+- умение читать несколько страниц
+- умение читать несколько страниц документации
+- умение понимать прочитанное
+- умение думать и делать выводы
+- возможность вспомнить что было на предыдущих занятиях
+- конспекты с лекций
