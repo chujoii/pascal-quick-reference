@@ -12,6 +12,10 @@
 других программ написать новый текстовый редактор или другую
 программу.
 
+Любые совпадения с реальными фамилиями, именами, группами и другими
+названиями просьба считать случайными и не пытаться их отражать в
+своих действиях.
+
 Критически относитесь к тексту: в нём гротеск искусно сочетается с
 непреднамеренными ошибками.
 #+BEGIN_COMMENT
@@ -110,7 +114,7 @@ pwgen -A -0
       (Мойа␣⋐⋓⋒⋹ℙ㝉программ ⏎ №Ⓣ®☋ "a/\cpaBu〠")
       
       
-    Рекомендуемые варианты написания сложных названий:
+Рекомендуемые варианты написания сложных названий:
     
     - Слитное написание: proj3abc -
       нерекомендуетсяпопричинетрудночитаемоститаких конструкций
@@ -131,35 +135,56 @@ pwgen -A -0
       
       
     
-    #+BEGIN_COMMENT
-    Which is better: identifier names that_look_like_this or
-    identifier names thatLookLikeThis?
+#+BEGIN_COMMENT
+Which is better: identifier names that_look_like_this or
+identifier names thatLookLikeThis?
+
+It's a precedent thing. If you have a Pascal or Smalltalk
+background, youProbablySquashNamesTogether like this. If you have
+an Ada background, You_Probably_Use_A_Large_Number_Of_Underscores
+like this. If you have a Microsoft Windows background, you
+probably prefer the "Hungarian" style which means you jkuidsPrefix
+vndskaIdentifiers ncqWith ksldjfTheir nmdsadType. And then there
+are the folks with a Unix C background, who abbr evthng n use vry
+srt idntfr nms. (AND THE FORTRN PRGMRS LIMIT EVRYTH TO SIX
+LETTRS.)
+
+CamelCase настолько читаем, что в Emacs даже есть специальный
+режим: glasses minor mode makes ‘unreadableIdentifiersLikeThis’
+readable by altering the way they display.
+#+END_COMMENT
     
-    It's a precedent thing. If you have a Pascal or Smalltalk
-    background, youProbablySquashNamesTogether like this. If you have
-    an Ada background, You_Probably_Use_A_Large_Number_Of_Underscores
-    like this. If you have a Microsoft Windows background, you
-    probably prefer the "Hungarian" style which means you jkuidsPrefix
-    vndskaIdentifiers ncqWith ksldjfTheir nmdsadType. And then there
-    are the folks with a Unix C background, who abbr evthng n use vry
-    srt idntfr nms. (AND THE FORTRN PRGMRS LIMIT EVRYTH TO SIX
-    LETTRS.)
-    
-    CamelCase настолько читаем, что в Emacs даже есть специальный
-    режим: glasses minor mode makes ‘unreadableIdentifiersLikeThis’
-    readable by altering the way they display.
-    #+END_COMMENT
+
     
     
+заранее подумайте, что правильнее для инструкции:
     
+    - чай_пей (объект_метод или другими словами объект_действие)
+    - пей_чай (наоборот: действие_объект или другими словами
+      _глагол-действие_, а после него идет _субъект_действия_)
+
+
+
+#+BEGIN_COMMENT 
+чай_пей (объект_метод или другими словами объект_действие)
+
+php
+
+пей_чай (наоборот: действие_объект или другими словами
+_глагол-действие_, а после него идет _субъект_действия_)
+
+perl, php
+
+
+заметьте php встречается и тут и там:
+[[https://nuclight.livejournal.com/107170.html]]
+[[http://habrahabr.ru/post/142140/]]
+#+END_COMMENT
     
-    заранее подумайте, что правильнее для инструкции:
-    
-    - чай_пей (объект_метод)
-    - пей_чай (наоборот)
-      
-      
-    Выбор варианта стиля:
+
+
+
+Выбор варианта стиля:
     
     - работа в команде - команда выберет стиль за вас.
     - продолжение работы над уже существующим проектом - предыдущий
@@ -169,9 +194,9 @@ pwgen -A -0
     - в остальных случаях выбор стиля за вами. Да.
       
       
-    Выбранный вариант, желательно, использовать не только для
-    каталогов, но и для названий файлов, а также во всей программе для
-    функций, переменных и прочего.
+Выбранный вариант, желательно, использовать не только для
+каталогов, но и для названий файлов, а также во всей программе для
+функций, переменных и прочего.
     
     
 ** Создание каталога
@@ -252,7 +277,7 @@ emacs abc3.pas &
 ** Написание программы
 #+NAME: write_program
 
-в текстовом редакторе самостоятельно написать хорошую, правильную
+В текстовом редакторе самостоятельно написать хорошую, правильную
 программу. После написания программы не закрывайте текстовый редактор!
 
 
@@ -318,11 +343,15 @@ emacs abc3.pas &
      - к этому моменту вы уже либо превратите emacs/vim в IDE, либо
        найдёте IDE по своему вкусу, или забросите программирование.
        
+      
+** Сохранение
+В текстовом редакторе: сохраните программу.
        
 ** Компиляция
 
 компиляция программы компилятором (fpc) - процесс получения
-исполняемого файла из исходных текстов программы:
+исполняемого файла из исходных текстов программы. Для этого в
+терминале:
 
 #+BEGIN_SRC bash
 fpc abc3.pas
@@ -333,42 +362,42 @@ fpc abc3.pas
       
       
     
-    Однако, лучше использовать гламурную компиляцию. Для этого нужно в
-    терминале ввести команду (не забудьте написать команду в одну
-    строчку, а также поменять типографские кавычки на одинарные
-    кавычки, если это необходимо)
-    
-    #+BEGIN_SRC bash
+Однако, лучше использовать гламурную компиляцию. Для этого нужно в
+терминале ввести команду (не забудьте написать команду в одну
+строчку, а также поменять типографские кавычки на одинарные
+кавычки, если это необходимо)
+
+#+BEGIN_SRC bash
 function fpcc() { fpc "$1" 2>&1 | grep -Ei --color 'error|fatal|warning|note|'; }
-    #+END_SRC
+#+END_SRC
     
     
     
-    и запускать
-    #+BEGIN_SRC bash
+и запускать
+#+BEGIN_SRC bash
 fpcc abc3.pas
-    #+END_SRC
+#+END_SRC
     
     
-    #+BEGIN_COMMENT
-    http://www.linux.org.ru/forum/development/4184158
-    http://creativecommons.org/licenses/
-    http://legroom.net/2009/08/18/bash-shell-aliases-and-functions
-    #+END_COMMENT
+#+BEGIN_COMMENT
+http://www.linux.org.ru/forum/development/4184158
+http://creativecommons.org/licenses/
+http://legroom.net/2009/08/18/bash-shell-aliases-and-functions
+#+END_COMMENT
     
-    или можно создать файл ~/bin/fpcc.sh с таким содержимым:
+или можно создать файл ~/bin/fpcc.sh с таким содержимым:
     
-    #+BEGIN_SRC bash
+#+BEGIN_SRC bash
 #!/bin/sh
 fpc $1 2>&1 | grep -Ei --color 'error|fatal|warning|note|'
-    #+END_SRC
+#+END_SRC
     
     
     
-    тогда запускать 
-    #+BEGIN_SRC bash
+тогда запускать 
+#+BEGIN_SRC bash
 ~/bin/fpcc.sh abc2.pas
-    #+END_SRC
+#+END_SRC
     
     
     
@@ -400,10 +429,7 @@ fpc $1 2>&1 | grep -Ei --color 'error|fatal|warning|note|'
 если для демонстрации программы необходимо построить график, то нет
 никакой необходимости строить график из паскаля. Воспользуйтесь
 программами для построения графиков: для этого получите текстовый файл
-с несколькими колонками разделёнными запятыми (без лишних сообщений),
-например так:
-
-
+с несколькими колонками разделёнными запятыми (без лишних сообщений).
 #+BEGIN_SRC fundamental
 x1, y11, y12, y13
 x2, y21, y22, y23
@@ -412,6 +438,7 @@ x3, y31, y32, y33
 #+END_SRC
 
 
+*** Двумерный график
 
 #+BEGIN_SRC pascal
 program abc5;
@@ -419,9 +446,9 @@ program abc5;
 uses math;
 
 const
-        step: real = 1.0e-1;
+        step : real = 1.0e-1;
         start : real = 0.0;
-        end : real = 5.0;
+        finish : real = 5.0;
 
 var 
         current : real;
@@ -429,11 +456,11 @@ var
 
 
 begin
-        current:=start;
+        current := start;
         repeat
-                writeln(current, ', ', sin(current));
+                writeln(current, ', ', sin(current*10)/current);
                 current := current + step;
-        until (current>end);
+        until (current > finish);
 end.
 #+END_SRC
 
@@ -458,29 +485,172 @@ end.
 (в них можно строить даже трёхмерные поверхности)
 
     - R: запускаем в терминале
-    #+BEGIN_SRC bash
+#+BEGIN_SRC bash
 R
-    #+END_SRC
+#+END_SRC
     
-    #+BEGIN_SRC R
+#+BEGIN_SRC R
 gr <- read.table("data.txt", sep=",", head=FALSE)
 plot(gr, type="l")
-    #+END_SRC
+#+END_SRC
     
     - gnuplot: запускаем в терминале 
-    #+BEGIN_SRC bash
+#+BEGIN_SRC bash
 gnuplot
-    #+END_SRC
+#+END_SRC
     
-    #+BEGIN_SRC gnuplot
+#+BEGIN_SRC gnuplot
 plot "data.txt" with line
-    #+END_SRC
+#+END_SRC
+
+
+выход "Ctrl + d"
     
-    выход "Ctrl + d"
     
     
-    
-    
+*** Плоское изображение
+
+Программа математического моделирования распределения электрического
+поля в пространстве между уголками.
+
+Недостатки программы:
+- Расчёт не корректный из-за небольшого сдвига при чтении и записи в
+  один и тот же массив.
+- Отсутствует полёт электрона.
+- Процедуры (и отсутствующие функции) используются без параметров:
+  тотальное использование глобальных переменных делает программу не
+  модульной.
+
+#+BEGIN_SRC pascal
+program modelir;
+
+const
+        dim = 100;
+        num_of_cycles = 10000;
+        
+var
+        arr : array [1..dim, 1..dim] of double;
+        i, j :integer;
+        k :integer;
+        
+
+
+procedure border; 
+var
+        i, j : integer;
+
+begin        
+        {
+        update border of model image (array)
+        
+        -----------------   100 V
+        |        
+        |
+        |         -------   0 V
+        |         |
+        |         |
+        
+        }
+
+        for i := 1 to dim do
+                for j := 1 to dim do begin
+                        if (i=1) then arr[i, j] := 100.0;
+                        if (j=1) then arr[i, j] := 100.0;
+                        if ((i>round(dim/8)) and (j>round(dim/2))) then arr[i, j] := 0.0;
+                        {if (sqr(i-dim/4) + sqr(j-dim/3) < sqr(5)) then arr[i, j] := 50.0;}
+                end;
+        
+end;
+
+
+
+procedure calc_field; 
+var
+        i, j : integer;
+
+begin
+        // calculate electrical field
+        for i := 2 to dim-1 do
+                for j := 2 to dim-1 do
+                        arr[i,j] := (arr[i+1,j]+arr[i-1,j]+arr[i,j+1]+arr[i,j-1])/4.0; // simple average of near element
+        
+        for i := 1 to dim do begin
+                // care for element near border
+                arr[i,1] := arr[i, 2];
+                arr[i,dim] := arr[i, dim-1];
+                arr[1,i] := arr[2, i];
+                arr[dim,i] := arr[dim-1, i];
+        end;
+end;
+
+
+
+begin
+        border;
+
+        for k:=1 to num_of_cycles do begin
+                border;
+                calc_field;
+        end;
+        
+        border;
+
+        for i := 1 to dim do begin
+                for j := 1 to dim do
+                        write(arr[i,j]:7:3, ' ');
+                writeln;
+        end;
+end.
+#+END_SRC
+
+
+откомпилировть, выполнить с перенаправлением вывода в файл и построить
+график
+#+BEGIN_SRC bash
+fpc modelir.pas
+./modelir > model.dat
+gnuplot -e "plot 'model.dat'  matrix with image ; pause -1 \"press enter\""
+#+END_SRC
+
+*** 3D изображение
+Если кому-то посчастливится строить трёхмерное изображение, то можно
+начать с примера:
+
+#+BEGIN_SRC pascal
+program test_3d;
+
+uses math;
+
+const
+        step : real = 1.0e-3;
+        start : real = -10.0;
+        finish : real = 30.0;
+
+var 
+        x, y, z : real;
+        param : real;
+
+
+begin
+        param := start;
+        repeat
+                writeln(param*cos(param), ', ', param*sin(param), ', ', param);
+                param := param + step;
+        until (param > finish);
+end.
+#+END_SRC
+
+
+откомпилировать, и в терминале:
+
+#+BEGIN_SRC bash
+./test_3d >! 3d.dat; gnuplot -e "splot '3d.dat' with lines ; pause -1 \"press enter\""
+#+END_SRC
+
+
+
+
+
 * Сообщения компилятора
 Компилятор показывает сообщения об ошибках с номером строки и номером
 символа в круглых скобках.  Например (6,4) - ошибка в строке 6, номер

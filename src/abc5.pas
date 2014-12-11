@@ -1,17 +1,21 @@
 program abc5;
+
 uses math;
+
 const
-   h: real = 1.0e-1;
+        step : real = 1.0e-3;
+        start : real = 0.0;
+        finish : real = 30.0;
+
 var 
-   a,b,c : real;
+        current : real;
+
+
 
 begin
-   a := -10.0;
-   b :=  10.0;
-   c := a;
-   repeat
-      writeln(c, ', ', sin(sqr(c)));
-      c := c + h;
-   until (c>b);
-   
+        current := start + step;
+        repeat
+                writeln(current, ', ', sin(current*current)/current);
+                current := current + step;
+        until (current > finish);
 end.
