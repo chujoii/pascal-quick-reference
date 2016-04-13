@@ -1,0 +1,86 @@
+%\documentclass[a4paper,10pt]{scrreprt}
+%\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{report}
+
+\documentclass[unicode, 12pt, a4paper,oneside,fleqn]{article}
+\usepackage[cm-default]{fontspec}
+\defaultfontfeatures{Mapping=tex-text}    %% устанавливаем поведение шрифтов по умолчанию
+\usepackage{polyglossia}    %% подключаем пакет многоязыкой верстки
+%\setdefaultlanguage{russian}    %% установка языка по умолчанию
+\setdefaultlanguage{english}    %% установка языка по умолчанию
+%\setotherlanguages{english}
+\setmainfont{Old Standard}      %% зададим основной шрифт документа
+%\setmainfont{DejaVu Sans Mono}
+\setmonofont{DejaVu Sans Mono}
+
+\usepackage{mathtext}               % если нужны русские буквы в формулах
+%\usepackage{ucs}
+%\usepackage[utf8x]{inputenc}       % Кодировка входного документа;
+                                   % при необходимости, вместо cp1251
+                                   % можно указать cp866 (Alt-кодировка
+                                   % DOS) или koi8-r.
+
+\usepackage{textcomp}              % типографские значки
+
+% \usepackage[T2A]{fontenc}           % Кодировка для шрифтов LH
+%\usepackage{indentfirst}    % неизвестно
+%\usepackage{cmap}           % неизвестно
+%\usepackage[english,russian]{babel} % Включение русификации, русских и
+                                    % английских стилей и переносов
+
+%\renewcommand{\rmdefault}{ost_____} % add new font  Old_Standard
+%\renewcommand{\sfdefault}{ost_____}
+%\renewcommand{\ttdefault}{osti____}
+
+\usepackage{graphics}
+\usepackage{pgf}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabularx}
+%\usepackage{fullpage}
+%\usepackage{amsmath} % для спец знаков в формулах
+%\usepackage{amssymb} % для спец знаков в формулах
+\usepackage{topcapt} % подписи к таблицам
+\usepackage{dcolumn} % выравнивание чисел
+\usepackage{ulem} % подчёркивание
+
+\hyphenpenalty=10000 % запретить переносы
+%\tolerance-1 
+\pretolerance10000 
+
+
+\usepackage[colorlinks=true]{hyperref} % url hyperlink
+
+\usepackage{makeidx} % индекс
+
+%\newfontfamily\cyrillicfont{DejaVu Sans Mono}
+%\newfontfamily{\cyrillicfont}{Liberation Mono}
+\usepackage{verbatim} % печать неформатированного текста
+%\usepackage{verbatimbox} % печать неформатированного текста в рамке
+\usepackage{fancyvrb}
+
+
+\usepackage{listings} % печать исходного кода
+%\lstloadlanguages{lisp}
+\lstset{
+  language=Pascal,
+  %basicstyle=\tiny, %or \small or \footnotesize etc.
+  extendedchars=\true, %Чтобы русские буквы в комментариях были 
+  %texcl,  %Чтобы русские буквы в комментариях были не слипшимися
+  keepspaces = true, %Чтобы русские буквы в комментариях были не слипшимися это работает!!!!!!!
+  escapechar=|,
+  frame=single,
+  commentstyle=\itshape,
+  inputencoding=utf8x,
+  stringstyle=\bfseries
+}
+
+
+
+% вращение 
+\usepackage{lscape}     % for %\begin{landscape} ...   %\end{landscape}
+\usepackage{rotating}   % for sideways and \rotatebox{-90}{}
+
+
+

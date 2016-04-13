@@ -540,18 +540,16 @@ end.              // конец программы
 
 * Список литературы
 
+- А.В. Столяров [[http://www.stolyarov.info/books/programming_intro/vol1][Программирование: введение в профессию. Том 1: азы
+  программирования]]
 - Е.Р.Алексеев, О.В.Чеснокова, Т.В.Кучер [[http://www.altlinux.org/Books:FreePascal][Free Pascal и Lazarus:
-  Учебник по программированию]] Библиотека ALT Linux
-    
+  Учебник по программированию]] Библиотека ALT Linux   
 - [[http://www.elettroshop.com/files/prodotti/download/mikroelektronica/pascal_syntax.pdf]]
   Quick Reference Guide for Pascal language</a> mikroElektronika
-  SOFTWARE AND HARDWARE SOLUTIONS FOR THE EMBEDDED WORLD
-    
+  SOFTWARE AND HARDWARE SOLUTIONS FOR THE EMBEDDED WORLD    
 - [[http://ru.wikipedia.org/wiki/Pascal][Паскаль (язык программирования)]] Материал из Википедии — свободной
-  энциклопедии
-    
-- [[http://edunow.su/site/content/pascal/pascal_shpargalka][Шпаргалка по языку Pascal]]
-    
+  энциклопедии    
+- [[http://edunow.su/site/content/pascal/pascal_shpargalka][Шпаргалка по языку Pascal]]    
 - [[http://www.freepascal.org/docs-html/][Документация Free Pascal]]
   
   
