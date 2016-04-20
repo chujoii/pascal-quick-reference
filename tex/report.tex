@@ -15,16 +15,19 @@
 
 \begin{document}
 
-%\renewcommand\bibname{СПИСОК ЛИТЕРАТУРЫ} 
+% меняем английские термины на русские
+\renewcommand\bibname{СПИСОК ЛИТЕРАТУРЫ} 
 \renewcommand\refname{\centering Список литературы}
 \renewcommand\contentsname{\centering Содержание}
+
+
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 %\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 % печатаем титульный лист
 \maketitle
 
-% оглавление
+% печатаем оглавление
 \tableofcontents
 
 
@@ -35,22 +38,16 @@
 
 \section{Лицензия}
 
-
-\begin{table}[ht]
-  \begin{tabular}{cc}
-    \includegraphics[width=2cm]{CC_BY-SA_88x31.png} &
-    \shortstack{руководство распространяется в соответствии с
-      условиями\\
-      \href{http://creativecommons.org/licenses/by-sa/3.0/}{Attribution-ShareAlike} \\
-      (Атрибуция — С сохранением условий) CC BY-SA \\
-      Копирование и распространение приветствуется.}
-  \end{tabular}
-
 % <------ процент это комментарий,
 % чтобы сделать текст видимым удалите символ процента в начале строки
 
 % Указать название лицензии (в случае EULA привести полный текст лицензии)
 % Вместо лицензии CC BY-SA для финального отчёта можно выбрать любую:
+
+Руководство распространяется в соответствии с
+    условиями \href{http://creativecommons.org/licenses/by-sa/3.0/}{Attribution-ShareAlike} 
+    (Атрибуция — С сохранением условий) CC BY-SA %\includegraphics[width=2cm]{CC_BY-SA_88x31.png}
+    Копирование и распространение приветствуется.
 
 %BSD (делайте с программой что хотите: копируйте,
 %    изменяйте, распространяйте, продавайте)
@@ -83,7 +80,6 @@
 %  {\tiny }
 
 
-\end{table}
 
 
 
@@ -106,9 +102,10 @@
 
 Если требуется список, то воспользуйтесь конструкцией:
 \begin{enumerate} % начало списка
-\item первый пункт
-\item за ним второй
-\item тут третий пункт
+\item в начале необходимо накопить умных мыслей
+\item открываем текстовый редактор
+\item ...
+\item PROFIT!
 \end{enumerate} % конец списка
 
 
@@ -120,19 +117,13 @@
 \section{Блок-схема}
 Агромадный рисунок с кружочками, стрелочками и многоугольниками:
 
-Если вы использовали Dia для создания блок-схемы, то после сохранения
-в каталоге проекта (в формате .dia) экспортируйте схему в Encapsulated
-PostScript (*.eps).
+Если вы использовали программу Dia для создания блок-схемы, то после
+сохранения в каталоге проекта (в формате .dia) экспортируйте схему в
+Encapsulated PostScript используя шрифты Pango (*.eps), например
+<<flowchart.eps>>. Также можно задать размер (ширину) картинки:
+width=15cm
 
-
-\includegraphics[width=2cm]{flowchart.eps}
-
-где \begin{description}
-\item $ <<flowchart.eps>> $ -- Заменить на имя вашего файла с
-  блок-схемой (файл с расширением eps, png, jpg, ...)
-\item $ widch=2cm $ -- ширина картинки
-\end{description}
-
+\includegraphics[width=15cm]{flowchart.eps}
 
 
 
@@ -171,31 +162,29 @@ PostScript (*.eps).
 Что нужно вводить и как получить результат.
 
 \begin{enumerate}
-\item например, создание каталога:
-  
-  \begin{lstlisting}[language=bash]
-    mkdir -p 21119/petroff/proj_3_abc
-  \end{lstlisting}
-  
-  где \begin{description}
-  \item $ 21119 $ -- номер группы,
-  \item $ petroff $ -- фамилия,
-  \item $ proj\_3\_abc $ -- название проекта.
-  \end{description}
-  название проекта (каталог, а также имена файлов и все имена
-  переменных) необходимо выбирать основательно, в данном случае
-  proj\_3\_abc расшифровывается как проект программы по распечатке
-  алфавита, цифра 3 обозначает номер задания.
-  
 \item перейти в каталог проекта
   \begin{lstlisting}[language=bash]
-    cd 21119/petroff/projabc3
+    cd 21119/petroff/mysuperprogramm
   \end{lstlisting}
   
-\item и запуск программы
+\item запустить программу
   \begin{lstlisting}[language=bash]
-    ./abc3
+    ./mysuperprogramm
   \end{lstlisting}
+  
+\item программа попросит ввести произвольную строку, после чего
+  пользователь вводит произвольную строку и нажимает ввод (Enter)
+  \begin{lstlisting}[language=bash]
+    введите произвольную строку = строка состоит из букв.
+  \end{lstlisting}
+
+\item программа обрабатывает введённые данные и выводит результат
+  \begin{lstlisting}[language=bash]
+    Это результат работы программы. Так- то!
+  \end{lstlisting}
+  
+\item внимательно прочитать результат и при необходимости запустить
+  программу снова
   
 \end{enumerate}
 
@@ -208,7 +197,7 @@ PostScript (*.eps).
 \section{Проверка}
 Если в программе используются маленькие формулы, например
 $y = \sqrt{1/x} = \sqrt{\frac{1}{x}}$ нужно проверить, как работает
-программа при x=0.0; x=-9.0 и обычных числах например x=25.0
+программа при $x=0.0$; $x=-9.0$ и обычных числах например x=25
 
 Для больших формул можно воспользоваться конструкцией <<equation>>:
 \begin{equation}
