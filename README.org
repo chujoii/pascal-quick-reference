@@ -66,6 +66,7 @@ pascal quick reference краткое руководство
 - [[programming-quick-reference.org][Краткое руководство по написанию программ]]
 - [[pascal-quick-reference.org][Краткое руководство по языку программирования Pascal]]
 - [[brief-programming-quick-reference.org][Выжимка из краткого руководства по написанию программ]]
+- [[src/color_menu.pas][Пример программы с меню]]
 * History:
 Project created at 2011-04(Apr)-15
 
